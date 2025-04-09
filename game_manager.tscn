@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://f852aterr571"]
+
+[ext_resource type="Texture2D" uid="uid://c0synsbitj012" path="res://Second_game_assests/background-black.png" id="1_4f28v"]
+[ext_resource type="PackedScene" uid="uid://5o3s4ggfuve8" path="res://Entities/player/player.tscn" id="2_rk3br"]
+[ext_resource type="Texture2D" uid="uid://c8q3esfawu7eu" path="res://Second_game_assests/spacepixels-0.1.0/spacepixels-0.1.0/horizontal_bar_blue.png" id="3_c4w7a"]
+[ext_resource type="PackedScene" uid="uid://bgyqjgkmeyp2l" path="res://Entities/enemy_spawner/enemy_spawner.tscn" id="4_uatst"]
+[ext_resource type="Script" path="res://Entities/enemy_spawner/enemy_spawner.gd" id="5_p464m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejimk"]
+size = Vector2(433.295, 20)
+
+[node name="gamemanager" type="Node2D"]
+
+[node name="bgsprite" type="Sprite2D" parent="."]
+position = Vector2(200, 300)
+scale = Vector2(1.04, 1.54)
+texture = ExtResource("1_4f28v")
+
+[node name="player" parent="." instance=ExtResource("2_rk3br")]
+position = Vector2(208, 552)
+
+[node name="Boundary" type="Area2D" parent="."]
+position = Vector2(192, 488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary"]
+shape = SubResource("RectangleShape2D_ejimk")
+
+[node name="HorizontalBarBlue" type="Sprite2D" parent="Boundary"]
+position = Vector2(0, -1.4782e-05)
+scale = Vector2(3.32308, 0.800001)
+texture = ExtResource("3_c4w7a")
+
+[node name="Bullets" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="enemy_spawner" parent="." instance=ExtResource("4_uatst")]
+script = ExtResource("5_p464m")

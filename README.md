@@ -6,5 +6,6 @@ To open the game :
 3. Open the project.godot file in Godot
 4. Export the game file with a template (Its intuitive, if you still can't follow a youtube tutorial)
 5. Enjoy the game
+
 Controls:
 Left arrow key to go left, right arrow key to go right and space to shoot
